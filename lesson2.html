@@ -16,8 +16,11 @@
   <script>
     let dom = document.querySelector('#root');
     let element = React.createElement(
+      //React.createElement(　タグ名、　属性、　中に組み込まれるもの）；　エレメントの作成
       'p', {}, 'Hello React!'
     );
+
+    //ReactDOM.render(　エレメント, ドム);　レンダリングした表示の作成エレメントをドムに入れますよ的な・・・
     ReactDOM.render(element, dom);
   </script>
 
