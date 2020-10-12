@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSXを使おう！！</title>
+  <!-- Reactを使えるようにするCDN -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!-- JSXが使えるようになるCDN -->
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+  <h1>React</h1>
+  <div id="root">wait...</div>
+
+  <script type="text/babel">
+    let dom = document.querySelector('#root');
+
+    let el = (  //（）はなくてもOKだけど、その場合、開業せずに”＝”のすぐみぎに＜div＞を書いていかないといけない！
+      <div>
+        <h2>JSX sample</h2>
+        <p>This is sample message.</p>
+      </div>
+    );
+
+    ReactDOM.render(el, dom);
+  </script>
+
+</body>
+
+</html>
+
+<!-- JSXで記述した値はそのまま仮想DOMのElementオブジェクトとして扱うことができる。
+つまり、createElementしなくても良い。
+ただし、JSXはElementオブジェクトを生成するものであるため、renderメソッドは、１つのElementを引数に指定するようになっている。
+よって、必ず１つのElementオブジェクトにまとめてJSXの値を用意しないといけない。-->
