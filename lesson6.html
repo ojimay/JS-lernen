@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>属性の値を設定する</title>
+  <!-- Reactを使えるようにするCDN -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!-- JSXが使えるようになるCDN -->
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+  <h1>React</h1>
+  <div id="root">wait...</div>
+
+  <script type="text/babel">
+    let dom = document.querySelector('#root');
+
+    let message = "新しいメッセージです。";
+    let link = "http://google.com";
+
+    let el = (
+      <div>
+        <p>{message}</p>
+        <p><a href={link}>this is link!</a></p>
+      </div>
+    );
+
+    ReactDOM.render(el, dom);
+  </script>
+
+</body>
+
+</html>
+
+<!-- {}の中に変数などを記述することで、その変数の値をその場に埋め込むことができるようになる。-->
+<!-- {}による変数などの埋め込みはテキストコンテンツだけしか使えないわけではなく、タグの属性の値を用意することも可。この時に属性は、テキストの値として埋め込むが、””をつけないで、直接{}を直接値として設定する。 -->
